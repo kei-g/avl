@@ -12,6 +12,10 @@
     "@types/node": "^15.12.4"
   },
   "displayName": "avl",
+  "keywords": [
+	  "AVL Tree",
+	  "TypeScript"
+  ],
   "license": "BSD-3-Clause License",
   "name": "avl",
   "private": true,
