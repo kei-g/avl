@@ -16,7 +16,7 @@
     "AVL Tree",
     "TypeScript"
   ],
-  "license": "BSD-3-Clause License",
+  "license": "BSD-3-Clause",
   "name": "avl",
   "private": true,
   "repository": {
