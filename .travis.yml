@@ -4,4 +4,4 @@ node_js:
   - 14
 dist: focal
 script:
-  - npm start
+  - npm run test
