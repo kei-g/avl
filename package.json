@@ -29,6 +29,8 @@
     "url": "https://github.com/kei-g/avl.git"
   },
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "ts-node test.ts"
   },
   "version": "1.0.0"
