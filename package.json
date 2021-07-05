@@ -3,6 +3,9 @@
     "email": "km.8k6ce+github@gmail.com",
     "name": "kei-g"
   },
+  "bugs": {
+    "url": "https://github.com/kei-g/avl/issues"
+  },
   "dependencies": {
     "@kei-g/iterators": "^1.0.2"
   },
@@ -13,6 +16,7 @@
     "typescript": "^4.3.5"
   },
   "displayName": "avl",
+  "homepage": "https://github.com/kei-g/avl",
   "keywords": [
     "AVL Tree",
     "TypeScript"
