@@ -1,6 +1,6 @@
 {
   "author": {
-    "email": "km.8k6ce+github@gmail.com",
+    "email": "km.8k6ce+npm@gmail.com",
     "name": "kei-g"
   },
   "bugs": {
@@ -22,6 +22,7 @@
     "TypeScript"
   ],
   "license": "BSD-3-Clause",
+  "main": "dist/avl.js",
   "name": "@kei-g/avl",
   "repository": {
     "type": "git",

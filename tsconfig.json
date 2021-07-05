@@ -1,7 +1,20 @@
 {
 	"compilerOptions": {
-		"lib": [ "DOM", "ES2019" ],
+    "charset": "utf8",
+    "declaration": true,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+		"lib": [ "ESNext" ],
+    "module": "CommonJS",
 		"moduleResolution": "node",
-		"target": "ES2019",
+    "newLine": "lf",
+    "outDir": "dist",
+    "pretty": true,
+    "skipLibCheck": true,
+		"target": "ES5",
 	},
+  "files": [
+    "./avl.ts",
+  ],
 }
