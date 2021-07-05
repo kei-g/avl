@@ -25,7 +25,7 @@
     "url": "https://github.com/kei-g/avl.git"
   },
   "scripts": {
-    "start": "ts-node example.ts"
+    "start": "ts-node test.ts"
   },
   "version": "1.0.0"
 }
