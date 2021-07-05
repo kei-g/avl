@@ -16,6 +16,7 @@
     "typescript": "^4.3.5"
   },
   "displayName": "avl",
+  "files": [ "dist" ],
   "homepage": "https://github.com/kei-g/avl",
   "keywords": [
     "AVL Tree",
