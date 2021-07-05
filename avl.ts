@@ -1,4 +1,4 @@
-import * as Iterators from './iterators'
+import { ConcatenatedIterator, EmptyIterator, SingleIterator } from '@kei-g/iterators'
 
 namespace Avl {
 	/**
@@ -35,7 +35,7 @@ namespace Avl {
 		 * @returns concatenated iterator
 		 */
 		private concatenate(another: Iterator<KeyValuePair<K, V>>): Iterator<KeyValuePair<K, V>> {
-			return new Iterators.ConcatenatedIterator(this[Symbol.iterator](), another)
+			return new ConcatenatedIterator(this[Symbol.iterator](), another)
 		}
 
 		/**
@@ -96,7 +96,7 @@ namespace Avl {
 		 * @returns concatenated iterator
 		 */
 		private prepend(another: Iterator<KeyValuePair<K, V>>): Iterator<KeyValuePair<K, V>> {
-			return new Iterators.ConcatenatedIterator(another, this[Symbol.iterator]())
+			return new ConcatenatedIterator(another, this[Symbol.iterator]())
 		}
 
 		/**
@@ -142,7 +142,7 @@ namespace Avl {
 		 * @returns iterator object
 		 */
 		[Symbol.iterator](): Iterator<KeyValuePair<K, V>> {
-			const self = new Iterators.SingleIterator(this)
+			const self = new SingleIterator(this)
 			const iterator = this.lhs?.concatenate(self) ?? self
 			return this.rhs?.prepend(iterator) ?? iterator
 		}
@@ -440,6 +440,6 @@ export class Tree<K, V> implements Iterable<KeyValuePair<K, V>> {
 	 * @returns iterator object
 	 */
 	[Symbol.iterator](): Iterator<KeyValuePair<K, V>> {
-		return this.root?.[Symbol.iterator]() ?? new Iterators.EmptyIterator()
+		return this.root?.[Symbol.iterator]() ?? new EmptyIterator()
 	}
 }
