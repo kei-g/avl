@@ -5,7 +5,10 @@
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [ "ESNext" ],
+    "lib": [
+      "DOM",
+      "ESNext",
+    ],
     "module": "CommonJS",
     "moduleResolution": "node",
     "newLine": "lf",
