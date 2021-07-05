@@ -18,8 +18,7 @@
     "TypeScript"
   ],
   "license": "BSD-3-Clause",
-  "name": "avl",
-  "private": true,
+  "name": "@kei-g/avl",
   "repository": {
     "type": "git",
     "url": "https://github.com/kei-g/avl.git"
