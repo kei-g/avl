@@ -25,6 +25,9 @@
   "license": "BSD-3-Clause",
   "main": "dist/avl.js",
   "name": "@kei-g/avl",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kei-g/avl.git"
