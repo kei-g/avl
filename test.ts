@@ -22,12 +22,12 @@ tree.add("pi", Math.PI)
 
 console.log("tree = {")
 for (const node of tree)
-	console.log(`\t${node.key}: ${node.value}`)
+  console.log(`\t${node.key}: ${node.value}`)
 console.log("}")
 
 tree.clear()
 
 console.log("tree = {")
 for (const node of tree)
-	console.log(`\t${node.key}: ${node.value}`)
+  console.log(`\t${node.key}: ${node.value}`)
 console.log("}")

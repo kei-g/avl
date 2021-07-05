@@ -1,19 +1,19 @@
 {
-	"compilerOptions": {
+  "compilerOptions": {
     "charset": "utf8",
     "declaration": true,
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-		"lib": [ "ESNext" ],
+    "lib": [ "ESNext" ],
     "module": "CommonJS",
-		"moduleResolution": "node",
+    "moduleResolution": "node",
     "newLine": "lf",
     "outDir": "dist",
     "pretty": true,
     "skipLibCheck": true,
-		"target": "ES5",
-	},
+    "target": "ES5",
+  },
   "files": [
     "./avl.ts",
   ],
