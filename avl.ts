@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+
 import { ConcatenatedIterator, EmptyIterator, SingleIterator } from '@kei-g/iterators'
 
 namespace Avl {
@@ -13,7 +15,7 @@ namespace Avl {
     /**
      * height of this node
      */
-    height: number = 0
+    height = 0
 
     /**
      * the next unused node
@@ -285,7 +287,7 @@ export class Tree<K, V> implements Iterable<KeyValuePair<K, V>> {
     for (const pair of this) {
       const node = pair as Avl.Node<K, V>
       this.destructor?.(node.key, node.value)
-      node.next = this.unused;
+      node.next = this.unused
       this.unused = node
     }
     this.root = null
