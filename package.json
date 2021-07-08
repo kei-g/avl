@@ -17,7 +17,9 @@
     "uglify-js": "^3.13.10"
   },
   "displayName": "avl",
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/kei-g/avl",
   "keywords": [
     "AVL Tree",
