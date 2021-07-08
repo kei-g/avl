@@ -12,6 +12,9 @@
   "description": "AVL Tree implementation written in TypeScript",
   "devDependencies": {
     "@types/node": "^16.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint": "^7.30.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5",
     "uglify-js": "^3.13.10"
@@ -37,6 +40,7 @@
   },
   "scripts": {
     "build": "tsc && [ -d dist ] || mkdir dist && uglifyjs build/avl.js --compress --mangle > dist/avl.js && cp build/avl.d.ts dist/",
+    "lint": "eslint *.ts",
     "prepublishOnly": "npm run build",
     "test": "ts-node test.ts"
   },
