@@ -13,7 +13,8 @@
   "devDependencies": {
     "@types/node": "^16.0.0",
     "ts-node": "^10.0.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "uglify-js": "^3.13.10"
   },
   "displayName": "avl",
   "files": [ "dist" ],
@@ -33,7 +34,7 @@
     "url": "https://github.com/kei-g/avl.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && [ -d dist ] || mkdir dist && uglifyjs build/avl.js --compress --mangle > dist/avl.js && cp build/avl.d.ts dist/",
     "prepublishOnly": "npm run build",
     "test": "ts-node test.ts"
   },
