@@ -40,6 +40,7 @@
   },
   "scripts": {
     "build": "npm run lint && tsc && [ -d dist ] || mkdir dist && uglifyjs build/avl.js --compress --mangle > dist/avl.js && cp build/avl.d.ts dist/",
+    "clean": "rm -fr build/ dist/",
     "lint": "eslint *.ts",
     "prepublishOnly": "npm run build",
     "test": "ts-node test.ts"
