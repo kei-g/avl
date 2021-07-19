@@ -3,11 +3,8 @@
     "charset": "utf8",
     "declaration": true,
     "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "lib": [
-      "DOM",
-      "ESNext",
+      "ES2015",
     ],
     "module": "CommonJS",
     "moduleResolution": "node",
