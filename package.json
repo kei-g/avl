@@ -39,10 +39,11 @@
     "url": "https://github.com/kei-g/avl.git"
   },
   "scripts": {
-    "build": "npm run lint && tsc && [ -d dist ] || mkdir dist && terser build/avl.js --compress --mangle > dist/avl.js && cp build/avl.d.ts dist/",
+    "build": "npm run lint && tsc && npm run terser",
     "clean": "rm -fr build/ dist/",
     "lint": "eslint *.ts",
     "prepublishOnly": "npm run build",
+    "terser": "[ -d dist ] || mkdir dist && terser build/avl.js --compress --mangle > dist/avl.js && cp build/avl.d.ts dist/",
     "test": "ts-node test.ts"
   },
   "version": "1.1.0"
