@@ -18,6 +18,9 @@
     "target": "ES5",
   },
   "files": [
-    "./avl.ts",
+    "avl.ts",
+  ],
+  "include": [
+    "avl.ts",
   ],
 }
