@@ -15,13 +15,14 @@
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^7.32.0",
+    "rimraf": "^3.0.2",
     "terser": "^5.7.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
   "displayName": "avl",
   "files": [
-    "dist"
+    "lib"
   ],
   "homepage": "https://github.com/kei-g/avl",
   "keywords": [
@@ -29,7 +30,7 @@
     "TypeScript"
   ],
   "license": "BSD-3-Clause",
-  "main": "dist/avl.js",
+  "main": "lib/avl.js",
   "name": "@kei-g/avl",
   "publishConfig": {
     "access": "public"
@@ -39,12 +40,12 @@
     "url": "https://github.com/kei-g/avl.git"
   },
   "scripts": {
-    "build": "npm run lint && tsc && npm run terser",
-    "clean": "rm -fr build/ dist/",
+    "build": "npm run lint && tsc && terser build/avl.js -c -m -o lib/avl.js --toplevel",
+    "clean": "rimraf build/ lib/",
     "lint": "eslint *.ts",
     "postpublish": "npm run clean",
+    "prebuild": "npm run clean",
     "prepublishOnly": "npm run build",
-    "terser": "[ -d dist ] || mkdir dist && terser build/avl.js --compress --mangle > dist/avl.js && cp build/avl.d.ts dist/",
     "test": "ts-node test.ts"
   },
   "version": "1.1.1"
