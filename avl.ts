@@ -37,7 +37,7 @@ namespace Avl {
      * @returns concatenated iterator
      */
     private concatenate(another: Iterator<KeyValuePair<K, V>>): Iterator<KeyValuePair<K, V>> {
-      return new ConcatenatedIterator(this[Symbol.iterator](), another)
+      return ConcatenatedIterator.of(this[Symbol.iterator](), another)
     }
 
     /**
@@ -98,7 +98,7 @@ namespace Avl {
      * @returns concatenated iterator
      */
     private prepend(another: Iterator<KeyValuePair<K, V>>): Iterator<KeyValuePair<K, V>> {
-      return new ConcatenatedIterator(another, this[Symbol.iterator]())
+      return ConcatenatedIterator.of(another, this[Symbol.iterator]())
     }
 
     /**
