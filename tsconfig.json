@@ -13,7 +13,6 @@
     "newLine": "lf",
     "outDir": "build",
     "pretty": true,
-    "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": false,
     "target": "ES2015",
