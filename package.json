@@ -6,9 +6,6 @@
   "bugs": {
     "url": "https://github.com/kei-g/avl/issues"
   },
-  "dependencies": {
-    "@kei-g/iterators": "^1.1.2"
-  },
   "description": "AVL Tree implementation written in TypeScript",
   "devDependencies": {
     "@types/node": "^16.7.2",

@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { ConcatenatedIterator, EmptyIterator, SingleIterator } from '@kei-g/iterators'
-
 namespace Avl {
   /**
    * Node of AVL Tree
@@ -29,15 +27,6 @@ namespace Avl {
      * @param value value of the node
      */
     constructor(public key: K, public value: V) {
-    }
-
-    /**
-     * append an iterator of key-value-pair
-     * @param another the iterator to be appended
-     * @returns concatenated iterator
-     */
-    private concatenate(another: Iterator<KeyValuePair<K, V>>): Iterator<KeyValuePair<K, V>> {
-      return ConcatenatedIterator.of(this[Symbol.iterator](), another)
     }
 
     /**
@@ -93,15 +82,6 @@ namespace Avl {
     }
 
     /**
-     * prepend an iterator of key-value-pair
-     * @param another the iterator to be prepended
-     * @returns concatenated iterator
-     */
-    private prepend(another: Iterator<KeyValuePair<K, V>>): Iterator<KeyValuePair<K, V>> {
-      return ConcatenatedIterator.of(another, this[Symbol.iterator]())
-    }
-
-    /**
      * reuse this node
      * @param key new key
      * @param value new value
@@ -144,9 +124,16 @@ namespace Avl {
      * @returns iterator object
      */
     [Symbol.iterator](): Iterator<KeyValuePair<K, V>> {
-      const self = new SingleIterator(this)
-      const iterator = this.lhs?.concatenate(self) ?? self
-      return this.rhs?.prepend(iterator) ?? iterator
+      return function* (self: Node<K, V>) {
+        const [lhs, rhs] = self.children
+        if (lhs)
+          for (const child of lhs)
+            yield child
+        yield self
+        if (rhs)
+          for (const child of rhs)
+            yield child
+      }(this)
     }
   }
 
@@ -442,6 +429,10 @@ export class Tree<K, V> implements Iterable<KeyValuePair<K, V>> {
    * @returns iterator object
    */
   [Symbol.iterator](): Iterator<KeyValuePair<K, V>> {
-    return this.root?.[Symbol.iterator]() ?? new EmptyIterator()
+    return function* (root: Avl.Node<K, V>) {
+      if (root)
+        for (const node of root)
+          yield node
+    }(this.root)
   }
 }
