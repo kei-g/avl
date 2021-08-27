@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "alwaysStrict": true,
     "charset": "utf8",
     "declaration": true,
     "declarationDir": "lib",
